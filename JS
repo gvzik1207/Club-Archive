@@ -1,0 +1,40 @@
+// Navigation Buttons
+const buttons = document.querySelectorAll('.menu button');
+const sections = document.querySelectorAll('.section');
+const searchForm = document.getElementById('searchForm');
+const searchInput = document.getElementById('searchInput');
+
+buttons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const target = btn.dataset.page;
+    showSection(target);
+    buttons.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+});
+
+function showSection(id) {
+  sections.forEach(sec => sec.classList.remove('active'));
+  const target = document.getElementById(id);
+  if (target) target.classList.add('active');
+}
+
+// Search Redirect
+searchForm.addEventListener('submit', e => e.preventDefault());
+searchInput.addEventListener('keydown', e => {
+  if (e.key === 'Enter') {
+    e.preventDefault();
+    const query = searchInput.value.trim().toLowerCase();
+    const validPages = {
+      'the clarion': 'clarion',
+      'theatre': 'theatre',
+      'chamber': 'chamber'
+    };
+    if (validPages[query]) {
+      showSection(validPages[query]);
+    } else {
+      showSection('search');
+    }
+    searchInput.value = '';
+  }
+});
