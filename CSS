@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap');
+
+:root {
+  --blue1: #77b9f0;
+  --blue2: #2c8fe0;
+  --blue3: #0d6fbf;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background: white;
+  overflow-x: hidden;
+  min-width: 900px;
+}
+
+.page {
+  position: relative;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Top Nav */
+.topnav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  z-index: 10;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.menu {
+  display: flex;
+  gap: 15px;
+  margin-left: 30px;
+}
+
+.menu button {
+  background: none;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  color: #0b1220;
+}
+
+.menu button.active {
+  color: white;
+  background: var(--blue2);
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+/* Search */
+.search-wrap {
+  margin-left: auto;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 8px;
+  padding: 6px 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.search input {
+  border: none;
+  outline: none;
+  font-weight: 500;
+  width: 200px;
+}
+
+/* Sections */
+.section {
+  display: none;
+  margin-top: 80px;
+  z-index: 2;
+}
+
+.section.active {
+  display: block;
+}
+
+.hero-title {
+  font-size: 48px;
+  color: var(--blue2);
+  font-weight: 800;
+}
+
+.lead {
+  font-size: 18px;
+  margin-top: 10px;
+  color: #111;
+  max-width: 700px;
+}
+
+.clubs-grid {
+  display: flex;
+  gap: 40px;
+  margin-top: 20px;
+}
+
+.club {
+  text-align: center;
+}
+
+.club .avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: var(--blue3);
+  margin: 0 auto 10px;
+}
+
+/* FAQ */
+.faq-list {
+  margin-top: 20px;
+}
+.faq-item {
+  margin-bottom: 15px;
+}
+
+/* Gmail Tooltip */
+.gmail-tooltip {
+  position: relative;
+  display: inline-block;
+  margin-top: 30px;
+}
+.gmail-tooltip::after {
+  content: attr(data-email);
+  position: absolute;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--blue3);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  opacity: 0;
+  transition: 0.3s;
+  white-space: nowrap;
+}
+.gmail-tooltip:hover::after {
+  opacity: 1;
+}
+
+.email-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid var(--blue2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Background Waves */
+.wave-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, var(--blue1), var(--blue2));
+  z-index: 0;
+}
+
+.wave-clip {
+  position: absolute;
+  right: -10%;
+  top: -10%;
+  width: 120%;
+  height: 120%;
+  background: white;
+  clip-path: ellipse(80% 60% at 70% 30%);
+  z-index: 1;
+}
