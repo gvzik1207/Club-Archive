@@ -129,9 +129,12 @@ body {
 /* FAQ */
 .faq-list {
   margin-top: 20px;
+  text-align: left;
 }
+
 .faq-item {
   margin-bottom: 15px;
+  text-align: left;
 }
 
 /* Gmail Tooltip */
